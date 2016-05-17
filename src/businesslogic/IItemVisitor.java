@@ -1,4 +1,4 @@
-package model;
+package businesslogic;
 
 public interface IItemVisitor {
 
