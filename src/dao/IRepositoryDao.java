@@ -5,9 +5,9 @@ import java.util.List;
 
 public interface IRepositoryDao<T> {
 	
-	public int save(T t)throws SQLException;
-	public void update(T t)throws SQLException;
-	public void delete(T t)throws SQLException;
-	public List<T> getAll(String entityName)throws SQLException;
-	public T get(T t)throws SQLException;
+	public void save(T t);
+	public void update(T t);
+	public void delete(T t);
+	public List<T> getAll();
+	public T get(T t);
 }
