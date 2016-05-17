@@ -2,7 +2,7 @@ package dao;
 
 import java.util.List;
 
-public interface Repository<T> {
+public interface IRepositoryDao<T> {
 	
 	public void save(T t);
 	public void update(T t);
