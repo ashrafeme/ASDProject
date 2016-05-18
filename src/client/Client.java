@@ -1,47 +1,81 @@
 package client;
 
-import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
+import businesslogic.Email;
+import businesslogic.FactoryPayment;
 import businesslogic.IRentalRecordBuilder;
+import businesslogic.Payment;
+import businesslogic.PaymentMethod;
 import businesslogic.RentalRecordBuilder;
+import businesslogic.SMS;
 import model.Address;
 import model.Customer;
 import model.Employee;
+import model.IVisitable;
 import model.Item;
 import model.PhoneNumber;
 import model.RentalRecord;
 
-public class Client {
+public class Client<T> {
 
 	public static void main(String[] args) {
-		
-		// adding items to invetory
-		Item item = new Item("car1", 100, "1234", true, 12);
-		Item item2 = new Item("car2", 400, "1534", true, 10);
-		List<Item> items = Arrays.asList(item, item2);
+
+		// Creating Items
+		Car BMW = new Car("BMW", 100, "1234", true, 12);
+		Car lamboguine = new Car("Lamboguine", 1001, "1534", true, 9);
 
 		// Creating Employee
 		Employee employee = new Employee("David", "James", new Date());
 
 		// Creating a customer
 		Customer customer = new Customer("Solomon", "Carl", new Date());
-		
-		//customer.
-		
-		// customer.
+		customer.setCardNumber("123456");
 
 		// Creating phone Number
 		PhoneNumber phoneNummber = new PhoneNumber("+91", "23455555");
 
 		// creating address
-		Address address = new Address("4th street", "fairField", "Iowa", "5555", "USA");
+		Address address = new Address("4th street", "fairField", "Iowa",
+				"5555", "USA");
 
-		// Creating a rental Record
-		IRentalRecordBuilder br = new RentalRecordBuilder();
-		
+		// creating Rental Record
+		IRentalRecordBuilder builder = new RentalRecordBuilder();
+		builder.setCustomer(customer);
+		builder.setEmployee(employee);
+		builder.addItem(lamboguine);
+		builder.addItem(BMW);
+		RentalRecord rentalRecord = (RentalRecord) builder.getRentalRecord();
+
+		// setting custommer fields
+		customer.setAddress(address);
+		customer.addPhoneNumber(phoneNummber);
+		customer.addRentalRecord(rentalRecord);
+
+		// process RentalPaymet for customer
+		Payment payment = FactoryPayment.getInstance().createPayment(
+				PaymentMethod.PAYPAL);
+		payment.setAmount(BMW.getRentalPrice());
+		payment.setCardNumber(customer.getCardNumber());
+		// register observers
+		payment.attachObserver(new Email());
+		payment.attachObserver(new SMS());
+
+		// charging customers
+		payment.charge();
+
+		// closing rental process
+		;
+		for(RentalRecord record:customer.getRentalHistory()){
+			for(IVisitable item:record.getItems()){
+				
+			}
+		}
 
 	}
+
+	public void processPayment(Customer customer) {
+
+	}
+
 }
