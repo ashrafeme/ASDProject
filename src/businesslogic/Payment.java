@@ -13,13 +13,19 @@ import java.util.List;
 public abstract class Payment {
 
 	List<Observer> observerlist;
-	private String cardNumber;
+	
+	private double amount;
 
-
-
+	
 	public Payment() {
 		observerlist = new ArrayList<>();
 	}
+	
+	public Payment(double amount) {
+		this();
+		this.amount = amount;
+	}
+
 
 	/**
 	 * Attach new Observer object to get the notification about the payment.
@@ -97,4 +103,12 @@ public abstract class Payment {
 		}
 		return true;
 	}// Observer pattern can add here
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
 }
