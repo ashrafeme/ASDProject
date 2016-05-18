@@ -15,10 +15,12 @@ public class Paypal extends Payment {
 	}
 
 	@Override
-	public boolean processPayment(String cardNumber) {
-		System.out.println("Paypal is processing.......");
-		return true;
+	public boolean processPayment() {
+		// TODO Auto-generated method stub
+		return false;
 	}
+
+	
 
 	
 

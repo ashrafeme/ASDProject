@@ -39,6 +39,7 @@ public class Client {
 
 		// Creating a rental Record
 		RentalRecord record = new RentalRecord(employee, items, LocalDate.now(),LocalDate.now(), "fine");
+		
 
 	}
 }

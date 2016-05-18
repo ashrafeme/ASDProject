@@ -15,9 +15,11 @@ public class Visa extends Payment {
 	}
 
 	@Override
-	public boolean processPayment(String cardNumber) {
-		System.out.println("Visa is processing.......");
-		return true;
+	public boolean processPayment() {
+		// TODO Auto-generated method stub
+		return false;
 	}
+
+	
 
 }

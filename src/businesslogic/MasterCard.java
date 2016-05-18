@@ -1,5 +1,9 @@
 package businesslogic;
-
+/**
+ * Define how the payment method MasterCard used to charge the customer.
+ * @author Ashraf
+ *
+ */
 public class MasterCard extends Payment {
 
 	@Override
@@ -14,10 +18,11 @@ public class MasterCard extends Payment {
 
 	}
 
+
 	@Override
-	public boolean processPayment(String cardNumber) {
-		System.out.println("MasterCard is processing.......");
-		return true;
+	public boolean processPayment() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
