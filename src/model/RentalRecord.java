@@ -1,6 +1,6 @@
 package model;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,50 +9,74 @@ import businesslogic.Payment;
 public class RentalRecord extends AbstractRentalRecord {
 
 	private Employee employee;
-	private List<Item> items;
-	private LocalDate startDate;
-	private LocalDate endDate;
+	private Customer customer;
+	private List<Item> items = new ArrayList<Item>();
+	private Date startDate;
+	private Date endDate;
 	private String status;
-
-	public RentalRecord(Employee employee, List<Item> items,
-			LocalDate startDate, LocalDate endDate, String status) {
-		super();
-		this.employee = employee;
-		this.items = items;
-		this.startDate = startDate;
-		this.endDate = endDate;
-		this.status = status;
-	}
 
 	public Employee getEmployee() {
 		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	
+	public Customer getCustomer() {
+		return this.customer;
 	}
 
 	public List<Item> getItems() {
 		return items;
 	}
 
-	public LocalDate getStartDate() {
+	public void addItem(Item item) {
+		this.items.add(item);
+	}
+
+	public Date getStartDate() {
 		return startDate;
 	}
 
-	public LocalDate getEndDate() {
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
 		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
 	public String getStatus() {
 		return status;
 	}
 
-	@Override
-	public void processPayment(Payment payment, String cardNumber) {
-		payment.setCardNumber(cardNumber);
-		payment.processPayment(cardNumber);
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override
-	public void calculateFine(Date date) {
-		System.out.println("calculating fine...............");
+	public boolean processPayment(Payment payment) {
+		return payment.charge();
+	}
+
+	@Override
+	public void closeRecord(Date date) {
+		this.status = "CLOSED";
+		this.endDate = date;
+	}
+
+	@Override
+	public double calculateFine() {
+		return 0;
 	}
 
 }
