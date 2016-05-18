@@ -1,7 +1,7 @@
 package dao;
 import java.util.List;
 
-public interface IRepositoryDao<T> {
+public interface IRentalDao<T> {
 	
 	public void save(T t);
 	public void update(T t);

@@ -1,13 +1,13 @@
 package dao;
 
 public class DaoFactory<T> {
-	private static IRepositoryDao<?> dao = null;
+	private static IRentalDao<?> dao = null;
 
-	protected static synchronized void setDao(IRepositoryDao<?> d) {
+	protected static synchronized void setDao(IRentalDao<?> d) {
 		dao = d;
 	}
 
-	public static synchronized IRepositoryDao<?> getDao() {
-		return dao == null ? dao = new RepositoryDaoImpl() : dao;
+	public static synchronized IRentalDao<?> getDao() {
+		return dao == null ? dao = new RentalDaoImpl() : dao;
 	}
 }

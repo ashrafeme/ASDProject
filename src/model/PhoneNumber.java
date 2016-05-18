@@ -4,10 +4,6 @@ public class PhoneNumber {
 	private String countryCode;
 	private String number;
 
-	public PhoneNumber() {
-		this("", "");
-	}
-
 	public String getCountryCode() {
 		return countryCode;
 	}

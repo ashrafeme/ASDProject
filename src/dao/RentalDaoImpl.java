@@ -3,16 +3,22 @@ package dao;
 import java.util.Arrays;
 import java.util.List;
 
-public class RepositoryDaoImpl<T> implements IRepositoryDao<T> {
+public class RentalDaoImpl<T> implements IRentalDao<T> {
+	T dataSource;
+
+	public void setDataSource(T dataSource) {
+		this.dataSource = dataSource;
+	}
 
 	@Override
 	public void save(T t) {
-
+		System.out.println("Saved " + t.getClass().getName() + "Successfully");
 	}
 
 	@Override
 	public void update(T t) {
-		System.out.println("Saved " + t.getClass().getName() + "Successfully");
+		System.out
+				.println("updated " + t.getClass().getName() + "Successfully");
 	}
 
 	@Override

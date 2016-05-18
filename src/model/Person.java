@@ -6,6 +6,13 @@ public abstract class Person {
 	private String lName;
 	private String dob;
 
+	public Person(String fName, String lName, String dob) {
+		super();
+		this.fName = fName;
+		this.lName = lName;
+		this.dob = dob;
+	}
+
 	public String getfName() {
 		return fName;
 	}
