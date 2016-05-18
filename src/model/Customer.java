@@ -1,13 +1,14 @@
 package model;
 
+import java.util.Date;
 import java.util.List;
 
 public class Customer extends Person {
 	private List<PhoneNumber> phoneNumbers;
 	private List<RentalRecord> rentalRecord;
 
-	public Customer(String fName, String lName, String dob) {
-		super(fName, lName, dob);
+	public Customer(String firstName, String lastName, Date dateOfBirth) {
+		super(firstName, lastName, dateOfBirth);
 	}
 
 	private Address address;

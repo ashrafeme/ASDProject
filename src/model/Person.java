@@ -1,39 +1,42 @@
 package model;
 
+import java.util.Date;
+
 public abstract class Person {
 
-	private String fName;
-	private String lName;
-	private String dob;
+	private String firstName;
+	private String lastName;
+	private Date dateOfBirth;
 
-	public Person(String fName, String lName, String dob) {
+	public Person(String firstName, String lastName, Date dateOfBirth) {
 		super();
-		this.fName = fName;
-		this.lName = lName;
-		this.dob = dob;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	public String getfName() {
-		return fName;
+		return firstName;
 	}
 
-	public void setfName(String fName) {
-		this.fName = fName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getlName() {
-		return lName;
+	public String getFirstName() {
+		return this.lastName;
 	}
 
-	public void setlName(String lName) {
-		this.lName = lName;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public String getDob() {
-		return dob;
+	public Date getDateOfBirth() {
+		return this.dateOfBirth;
 	}
 
-	public void setDob(String dob) {
-		this.dob = dob;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
+
 }
