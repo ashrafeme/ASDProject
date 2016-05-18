@@ -28,6 +28,10 @@ public class Customer extends Person {
 		return phoneNumbers;
 	}
 
+	/**
+	 * Add a new PhoneNumber to the list of Customer's PhoneNumbers
+	 * @param phoneNumber
+	 */
 	public void addPhoneNumber(PhoneNumber phoneNumber) {
 		this.phoneNumbers.add(phoneNumber);
 	}
@@ -50,7 +54,12 @@ public class Customer extends Person {
 
 	}
 
-	public List<RentalRecord> getRentalRecord() {
+	
+	/**
+	 * Get the full list of Customer's RentalRecords
+	 * @return List<RentalRecord>
+	 */
+	public List<RentalRecord> getRentalHistory() {
 		return rentalRecord;
 	}
 
