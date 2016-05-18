@@ -1,5 +1,7 @@
 package model;
 
+import businesslogic.IItemVisitor;
+
 public interface IVisitable {
-	public void accept(IVisitable visitor);
+	public void accept(IItemVisitor visitor);
 }

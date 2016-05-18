@@ -1,6 +1,8 @@
 package model;
 
-public class Item  implements IVisitable, IItem {
+import businesslogic.IItemVisitor;
+
+public class Item implements IVisitable, IItem {
 	private String ItemName;
 	private double rentalPrice;
 	private String code;
@@ -56,7 +58,7 @@ public class Item  implements IVisitable, IItem {
 	}
 
 	@Override
-	public void accept(IVisitable visitor) {
+	public void accept(IItemVisitor visitor) {
 		// TODO Auto-generated method stub
 		
 	}
