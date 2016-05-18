@@ -39,6 +39,7 @@ public class Client {
 		// creating address
 		Address address = new Address("4th street", "fairField", "Iowa", "5555", "USA");
 
+		// Creating a rental Record
 		IRentalRecordBuilder br = new RentalRecordBuilder();
 		
 
