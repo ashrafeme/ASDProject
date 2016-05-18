@@ -1,5 +1,6 @@
 package client;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -37,8 +38,7 @@ public class Client {
 		Address address = new Address("4th street", "fairField", "Iowa", "5555", "USA");
 
 		// Creating a rental Record
-		RentalRecord record = new RentalRecord();
+		RentalRecord record = new RentalRecord(employee, items, LocalDate.now(),LocalDate.now(), "fine");
 
 	}
-
 }

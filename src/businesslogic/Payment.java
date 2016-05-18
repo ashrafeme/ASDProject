@@ -6,6 +6,9 @@ import java.util.List;
 public abstract class Payment {
 
 	List<Observer> observerlist;
+	private String cardNumber;
+
+
 
 	public Payment() {
 		observerlist = new ArrayList<>();
@@ -29,17 +32,21 @@ public abstract class Payment {
 
 		validateCustomerInformation();
 		validateBillingInformation();
-		if (processPayment())
+		if (processPayment(cardNumber))
 			if (notifyCustomer())
 				result = true;
 		return result;
 	}
-
+	
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+	
 	public abstract void validateCustomerInformation();
 
 	public abstract void validateBillingInformation();
 
-	public abstract boolean processPayment();
+	public abstract boolean processPayment(String cardNumber);
 
 	public boolean notifyCustomer() {
 

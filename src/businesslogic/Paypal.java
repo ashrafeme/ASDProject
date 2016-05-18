@@ -15,7 +15,7 @@ public class Paypal extends Payment {
 	}
 
 	@Override
-	public boolean processPayment() {
+	public boolean processPayment(String cardNumber) {
 		System.out.println("Paypal is processing.......");
 		return true;
 	}

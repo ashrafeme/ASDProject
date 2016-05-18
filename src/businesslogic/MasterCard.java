@@ -15,7 +15,7 @@ public class MasterCard extends Payment {
 	}
 
 	@Override
-	public boolean processPayment() {
+	public boolean processPayment(String cardNumber) {
 		System.out.println("MasterCard is processing.......");
 		return true;
 	}
