@@ -12,7 +12,7 @@ public class RentalRecordBuilder implements IRentalRecordBuilder {
 
 	private RentalRecord rentalRecord;
 
-	private RentalRecordBuilder() {
+	public RentalRecordBuilder() {
 		this.rentalRecord = new RentalRecord();
 		this.rentalRecord.setStartDate(new Date());
 		this.rentalRecord.setStatus("OPEN");

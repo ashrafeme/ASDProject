@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import businesslogic.IRentalRecordBuilder;
+import businesslogic.RentalRecordBuilder;
 import model.Address;
 import model.Customer;
 import model.Employee;
@@ -37,8 +39,7 @@ public class Client {
 		// creating address
 		Address address = new Address("4th street", "fairField", "Iowa", "5555", "USA");
 
-		// Creating a rental Record
-		RentalRecord record = new RentalRecord(employee, items, LocalDate.now(),LocalDate.now(), "fine");
+		IRentalRecordBuilder br = new RentalRecordBuilder();
 		
 
 	}
