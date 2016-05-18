@@ -9,14 +9,15 @@ package businesslogic;
 public class MasterCard extends Payment {
 
 	private String cardNumber;
-	
+
 	public MasterCard() {
-		
+
 	}
+
 	public MasterCard(String cardNumber, double amount) {
 		super(amount);
 		this.cardNumber = cardNumber;
-		
+
 	}
 
 	public String getCardNumber() {
@@ -39,8 +40,9 @@ public class MasterCard extends Payment {
 
 	@Override
 	public boolean processPayment() {
-		// TODO Auto-generated method stub
-		return false;
+		System.out.println("MasterCard is processing amount(" + getAmount() + ".......");
+		
+		return true;
 	}
 
 }
