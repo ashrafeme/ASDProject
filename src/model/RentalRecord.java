@@ -14,6 +14,7 @@ public class RentalRecord extends AbstractRentalRecord {
 	private Date startDate;
 	private Date endDate;
 	private String status;
+	private double totalPrice;
 
 	public Employee getEmployee() {
 		return employee;
@@ -61,6 +62,14 @@ public class RentalRecord extends AbstractRentalRecord {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 
 	@Override

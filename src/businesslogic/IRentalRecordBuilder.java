@@ -7,8 +7,6 @@ import model.Item;
 
 public interface IRentalRecordBuilder {
 	
-	public void newRecord();
-	
 	public void setEmployee(Employee employee);
 
 	public void setCustomer(Customer customer);

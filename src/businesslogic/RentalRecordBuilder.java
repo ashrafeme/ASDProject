@@ -10,19 +10,9 @@ import model.RentalRecord;
 
 public class RentalRecordBuilder implements IRentalRecordBuilder {
 
-	private static IRentalRecordBuilder instance = new RentalRecordBuilder();
-
 	private RentalRecord rentalRecord;
 
 	private RentalRecordBuilder() {
-	}
-
-	public static IRentalRecordBuilder getInstance() {
-		return instance;
-	}
-	
-	@Override
-	public void newRecord(){
 		this.rentalRecord = new RentalRecord();
 		this.rentalRecord.setStartDate(new Date());
 		this.rentalRecord.setStatus("OPEN");
