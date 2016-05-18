@@ -36,8 +36,9 @@ public class Visa extends Payment {
 
 	@Override
 	public boolean processPayment() {
-		// TODO Auto-generated method stub
-		return false;
+System.out.println("visa is processing amount(" + getAmount() + ".......");
+		
+		return true;
 	}
 
 }

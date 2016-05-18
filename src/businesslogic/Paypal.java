@@ -35,8 +35,9 @@ public class Paypal extends Payment {
 
 	@Override
 	public boolean processPayment() {
-		// TODO Auto-generated method stub
-		return false;
+System.out.println("Paypal is processing amount(" + getAmount() + ".......");
+		
+		return true;
 	}
 
 }
