@@ -3,11 +3,15 @@ package businesslogic;
 import model.AbstractRentalRecord;
 import model.Customer;
 import model.Employee;
-import model.IVisitable;
+import model.Item;
 
 public interface IRentalRecordBuilder {
-	public void addEmployee(Employee employee);
-	public void addCustomer(Customer customer);
-	public void addItem(IVisitable item);
+	
+	public void setEmployee(Employee employee);
+
+	public void setCustomer(Customer customer);
+
+	public void addItem(Item item);
+
 	public AbstractRentalRecord getRentalRecord();
 }
