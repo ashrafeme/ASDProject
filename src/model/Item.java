@@ -1,6 +1,6 @@
 package model;
 
-public class Item  implements IVisitable{
+public class Item  implements IVisitable, IItem {
 	private String ItemName;
 	private double rentalPrice;
 	private String code;
@@ -53,5 +53,11 @@ public class Item  implements IVisitable{
 	public boolean updateItem(Item item) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void accept(IVisitable visitor) {
+		// TODO Auto-generated method stub
+		
 	}
 }
