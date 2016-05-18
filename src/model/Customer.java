@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,6 +10,8 @@ public class Customer extends Person {
 
 	public Customer(String firstName, String lastName, Date dateOfBirth) {
 		super(firstName, lastName, dateOfBirth);
+		this.phoneNumbers = new ArrayList<PhoneNumber>();
+		this.rentalRecord = new ArrayList<RentalRecord>();
 	}
 
 	private Address address;
@@ -25,16 +28,34 @@ public class Customer extends Person {
 		return phoneNumbers;
 	}
 
-	public void setPhoneNumbers(List<PhoneNumber> phoneNumbers) {
-		this.phoneNumbers = phoneNumbers;
+	public void addPhoneNumber(PhoneNumber phoneNumber) {
+		this.phoneNumbers.add(phoneNumber);
+	}
+
+	/**
+	 * Search throughout the phone numbers and returns the first found and
+	 * marked as primary
+	 * 
+	 * @return PhoneNumber
+	 */
+	public PhoneNumber getPrimaryPhoneNumber() {
+
+		for (PhoneNumber pn : this.phoneNumbers) {
+			if (pn.isPrimary()) {
+				return pn;
+			}
+		}
+
+		return null;
+
 	}
 
 	public List<RentalRecord> getRentalRecord() {
 		return rentalRecord;
 	}
 
-	public void setRentalRecord(List<RentalRecord> rentalRecord) {
-		this.rentalRecord = rentalRecord;
+	public void addRentalRecord(RentalRecord rentalRecord) {
+		this.rentalRecord.add(rentalRecord);
 	}
 
 }

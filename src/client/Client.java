@@ -25,6 +25,9 @@ public class Client {
 
 		// Creating a customer
 		Customer customer = new Customer("Solomon", "Carl", new Date());
+		
+		//customer.
+		
 		// customer.
 
 		// Creating phone Number
