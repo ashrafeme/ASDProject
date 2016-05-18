@@ -1,5 +1,7 @@
 package businesslogic;
 
+import java.util.Date;
+
 import model.AbstractRentalRecord;
 import model.Customer;
 import model.Employee;
@@ -13,11 +15,16 @@ public class RentalRecordBuilder implements IRentalRecordBuilder {
 	private RentalRecord rentalRecord;
 
 	private RentalRecordBuilder() {
-
 	}
 
 	public static IRentalRecordBuilder getInstance() {
 		return instance;
+	}
+	
+	public void newRecord(){
+		this.rentalRecord = new RentalRecord();
+		this.rentalRecord.setStartDate(new Date());
+		this.rentalRecord.setStatus("OPEN");
 	}
 
 	@Override
@@ -28,7 +35,6 @@ public class RentalRecordBuilder implements IRentalRecordBuilder {
 	@Override
 	public void setCustomer(Customer customer) {
 		this.rentalRecord.setCustomer(customer);
-
 	}
 
 	@Override
