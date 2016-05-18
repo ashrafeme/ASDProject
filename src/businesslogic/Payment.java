@@ -13,6 +13,9 @@ import java.util.List;
 public abstract class Payment {
 
 	List<Observer> observerlist;
+	private String cardNumber;
+
+
 
 	public Payment() {
 		observerlist = new ArrayList<>();
@@ -57,18 +60,22 @@ public abstract class Payment {
 				result = true;
 		return result;
 	}
+	
 
 	/**
 	 * Validate the Customer Data before starting the payment Process. this
 	 * method defined to let the subclass to over take it and define how the
 	 * validation done.
 	 */
+
 	public abstract void validateCustomerInformation();
 
 	/**
 	 * validate the bill information before starting the payment process.
 	 */
 	public abstract void validateBillingInformation();
+
+
 
 	/**
 	 * the processing payment happen here if and the subclass to do this

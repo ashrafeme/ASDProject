@@ -18,10 +18,11 @@ public class MasterCard extends Payment {
 
 	}
 
+
 	@Override
 	public boolean processPayment() {
-		System.out.println("MasterCard is processing.......");
-		return true;
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
