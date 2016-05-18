@@ -2,24 +2,17 @@ package businesslogic;
 
 public class Paypal extends Payment {
 
-	private String email;
+	
 
 	public Paypal() {
 
 	}
 
 	public Paypal(String email, double amount) {
-		super(amount);
-		this.setEmail(email);
+		super(amount, email);
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 
 	@Override
 	public void validateCustomerInformation() {
@@ -35,8 +28,8 @@ public class Paypal extends Payment {
 
 	@Override
 	public boolean processPayment() {
-System.out.println("Paypal is processing amount(" + getAmount() + ".......");
-		
+		System.out.println("Paypal is processing amount(" + getAmount() + ").......");
+
 		return true;
 	}
 

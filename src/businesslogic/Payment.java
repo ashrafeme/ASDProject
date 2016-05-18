@@ -16,14 +16,31 @@ public abstract class Payment {
 	
 	private double amount;
 
+	private String cardNumber;
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+	
+	public String getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
 	
 	public Payment() {
 		observerlist = new ArrayList<>();
 	}
 	
-	public Payment(double amount) {
+	public Payment(double amount,String cardNumber) {
 		this();
 		this.amount = amount;
+		this.cardNumber = cardNumber;
 	}
 
 
@@ -102,13 +119,7 @@ public abstract class Payment {
 			obs.update();
 		}
 		return true;
-	}// Observer pattern can add here
-
-	public double getAmount() {
-		return amount;
 	}
 
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
+	
 }

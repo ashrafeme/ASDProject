@@ -8,25 +8,18 @@ package businesslogic;
  */
 public class MasterCard extends Payment {
 
-	private String cardNumber;
+	
 
 	public MasterCard() {
 
 	}
 
 	public MasterCard(String cardNumber, double amount) {
-		super(amount);
-		this.cardNumber = cardNumber;
+		super(amount, cardNumber);
 
 	}
 
-	public String getCardNumber() {
-		return cardNumber;
-	}
-
-	public void setCardNumber(String cardNumber) {
-		this.cardNumber = cardNumber;
-	}
+	
 
 	@Override
 	public void validateCustomerInformation() {
