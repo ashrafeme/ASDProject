@@ -38,7 +38,7 @@ public class Client {
 		Address address = new Address("4th street", "fairField", "Iowa", "5555", "USA");
 
 		// Creating a rental Record
-		RentalRecord record = new RentalRecord(employee, items, LocalDate.now(),LocalDate.now(), "fine");
+		//RentalRecord record = new RentalRecord(employee, items, LocalDate.now(),LocalDate.now(), "fine");
 		
 
 	}
