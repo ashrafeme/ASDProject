@@ -21,6 +21,7 @@ public class RentalRecordBuilder implements IRentalRecordBuilder {
 		return instance;
 	}
 	
+	@Override
 	public void newRecord(){
 		this.rentalRecord = new RentalRecord();
 		this.rentalRecord.setStartDate(new Date());
