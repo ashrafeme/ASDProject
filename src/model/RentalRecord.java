@@ -10,7 +10,7 @@ public class RentalRecord extends AbstractRentalRecord {
 
 	private Employee employee;
 	private Customer customer;
-	private List<Item> items = new ArrayList<Item>();
+	private List<IVisitable> items = new ArrayList<>();
 	private Date startDate;
 	private Date endDate;
 	private String status;
@@ -32,7 +32,7 @@ public class RentalRecord extends AbstractRentalRecord {
 		return this.customer;
 	}
 
-	public List<Item> getItems() {
+	public List<IVisitable> getItems() {
 		return items;
 	}
 
