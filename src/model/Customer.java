@@ -7,6 +7,7 @@ import java.util.List;
 public class Customer extends Person {
 	private List<PhoneNumber> phoneNumbers;
 	private List<RentalRecord> rentalRecord;
+	private String cardNumber;
 
 	public Customer(String firstName, String lastName, Date dateOfBirth) {
 		super(firstName, lastName, dateOfBirth);
@@ -66,5 +67,11 @@ public class Customer extends Person {
 	public void addRentalRecord(RentalRecord rentalRecord) {
 		this.rentalRecord.add(rentalRecord);
 	}
+	public String getCardNumber() {
+		return cardNumber;
+	}
 
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
 }
