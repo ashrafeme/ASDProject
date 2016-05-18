@@ -1,5 +1,9 @@
 package businesslogic;
-
+/**
+ * Define how the payment method MasterCard used to charge the customer.
+ * @author Ashraf
+ *
+ */
 public class MasterCard extends Payment {
 
 	@Override
