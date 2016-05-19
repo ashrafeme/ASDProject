@@ -2,6 +2,13 @@ package client;
 
 import java.util.Date;
 
+import model.Address;
+import model.Customer;
+import model.Employee;
+import model.IVisitable;
+import model.PhoneNumber;
+import model.RentalRecord;
+import businesslogic.AverageRentingDuration;
 import businesslogic.Email;
 import businesslogic.FactoryPayment;
 import businesslogic.IRentalRecordBuilder;
@@ -9,21 +16,14 @@ import businesslogic.Payment;
 import businesslogic.PaymentMethod;
 import businesslogic.RentalRecordBuilder;
 import businesslogic.SMS;
-import model.Address;
-import model.Customer;
-import model.Employee;
-import model.IVisitable;
-import model.Item;
-import model.PhoneNumber;
-import model.RentalRecord;
 
 public class Client<T> {
 
 	public static void main(String[] args) {
 
 		// Creating Items
-		Car BMW = new Car("BMW", 100, "1234", true, 12);
-		Car lamboguine = new Car("Lamboguine", 1001, "1534", true, 9);
+		Car BMW = new Car("BMW", 100, "1234", true, 12,4);
+		Car lamboguine = new Car("Lamboguine", 1001, "1534", true, 9,5);
 
 		// Creating Employee
 		Employee employee = new Employee("David", "James", new Date());
@@ -65,17 +65,14 @@ public class Client<T> {
 		payment.charge();
 
 		// closing rental process
-		;
-		for(RentalRecord record:customer.getRentalHistory()){
-			for(IVisitable item:record.getItems()){
-				
-			}
+		rentalRecord.closeRecord(new Date());
+		
+		//calculating Average Renting duration
+		AverageRentingDuration averageRentingDurationVisitor = new AverageRentingDuration();
+		for (IVisitable item : rentalRecord.getItems()) {
+			item.accept(averageRentingDurationVisitor);
 		}
+		System.out.println("AverageRentingDuration "+averageRentingDurationVisitor.getAverage());
 
 	}
-
-	public void processPayment(Customer customer) {
-
-	}
-
 }

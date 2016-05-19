@@ -23,8 +23,8 @@ public class Car extends Item {
 	}
 
 	public Car(String itemName, double rentalPrice, String code,
-			boolean available, int stock) {
-		super(itemName, rentalPrice, code, available, stock);
+			boolean available, int stock,int duration) {
+		super(itemName, rentalPrice, code, available, stock,duration);
 	}
 
 }

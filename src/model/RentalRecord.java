@@ -81,6 +81,7 @@ public class RentalRecord extends AbstractRentalRecord {
 	public void closeRecord(Date date) {
 		this.status = "CLOSED";
 		this.endDate = date;
+		System.out.println("Record Closed");
 	}
 
 	@Override

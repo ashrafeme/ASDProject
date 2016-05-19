@@ -8,15 +8,20 @@ public class Item implements IVisitable, IItem {
 	private String code;
 	private boolean available;
 	private int stock;
+	private int rentalDuration;
 
 	public Item(String itemName, double rentalPrice, String code,
-			boolean available, int stock) {
+			boolean available, int stock,int duration) {
 		super();
 		ItemName = itemName;
 		this.rentalPrice = rentalPrice;
 		this.code = code;
 		this.available = available;
 		this.stock = stock;
+	}
+
+	public int getRentalDuration() {
+		return rentalDuration;
 	}
 
 	public String getItemName() {
